@@ -1,4 +1,11 @@
 # Binance Smart Chain node RPC Docker image
+## Install docker and docker-compose
+```
+# curl https://get.docker.com | sh
+# curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+# chmod +x /usr/local/bin/docker-compose
+```
+
 ## QuickStart
 ```
 # mkdir -p /data/
@@ -19,3 +26,5 @@
 > https://github.com/vlddm/binance-smart-chain-node
 
 > https://github.com/binance-chain/bsc
+
+> https://docs.docker.com/compose/install/
