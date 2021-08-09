@@ -1,0 +1,23 @@
+version: '3.7'                                  
+services:                                       
+  bsc-rpc:                                      
+    container_name: binance-smart-chain-node-rpc
+    image: vlddm/binance-smart-chain-node:latest
+    restart: always
+    network_mode: host
+    volumes:
+      - /data/bsc:/root
+#    ports:
+#      - 127.0.0.1:8545:8545
+#      - 127.0.0.1:8546:8546
+#      - 127.0.0.1:6060:6060
+#      - 30311:30311
+#      - 30311:30311/udp
+    command: |
+      --datadir /root/node
+      --syncmode light
+      --cache 4096
+      --http --http.addr 0.0.0.0 --http.port 8545 --http.api "eth,net,web3,txpool,parlia" --http.corsdomain "*"
+      --ws  --ws.addr 0.0.0.0 --ws.api "net,web3," --ws.origins "*"
+#      --rpc.allow-unprotected-txs
+#      --txlookuplimit 0                         
